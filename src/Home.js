@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import DishesCard from "./DishesCard"
+import AddDishForm from "./AddDishForm"
 
 function Home() {
   const [dishes, setDishes] = useState([]);
@@ -10,11 +11,17 @@ function Home() {
       .then((data) => setDishes(data));
   }, []);
 
-  let dishesCards = dishes.map((dish) => <DishesCard dish={dish} key={dish.id}/>)
+  function handleDeleteItem(deletedDish) {
+    const updatedDishes = dishes.filter((dish) => dish.id !== deletedDish.id);
+    setDishes(updatedDishes);
+}
+
+  let dishesCards = dishes.map((dish) => <DishesCard dish={dish} key={dish.id} handleDeleteItem={handleDeleteItem}/>)
   
   return (
     <>
       {dishesCards}
+      <AddDishForm setDishes={setDishes}/>
     </>
   );
 }
