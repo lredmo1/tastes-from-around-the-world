@@ -1,0 +1,19 @@
+{
+    "dishes" : [
+        {
+            "id" : 1,
+            "name" : "Pad Thai",
+            "country": "Thailand"
+        },
+        {
+            "id" : 2,
+            "name" : "Chicken Tikka Masalai",
+            "country": "India"
+        },
+        {
+            "id" : 3,
+            "name" : "Poutine",
+            "country": "Canada"
+        }
+    ]
+}

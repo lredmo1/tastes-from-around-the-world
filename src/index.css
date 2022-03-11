@@ -11,3 +11,13 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+#dishes-card {
+  border: 2px solid black;
+  margin: 20px;
+  padding: 10px;
+}
+
+h1 {
+  font-size: 15px;
+}
