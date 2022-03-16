@@ -15,6 +15,7 @@ function DishesCard({ dish, setDishes }) {
   return (
     <div id="dishes-card">
       <h1>Name: {dish.name}</h1>
+      <h1>Ingredients: {dish.ingredients}</h1>
       <button onClick={handleDelete}>Delete</button>
     </div>
   );

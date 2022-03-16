@@ -3,6 +3,7 @@ import { useState } from "react";
 function AddDishForm({setDishes}) {
   const [formData, setFormData] = useState({
     name: "",
+    ingredients: ""
   });
 
   function handleChange(e) {
@@ -23,6 +24,7 @@ function AddDishForm({setDishes}) {
         setDishes((current) => [...current, data]);
         setFormData({
           name: "",
+          ingredients: ""
         });
       });
   }
@@ -39,7 +41,17 @@ function AddDishForm({setDishes}) {
           required
         ></input>
       </label>
-
+      <label>
+        Ingredients:{" "}
+        <input
+          name="ingredients"
+          type="text"
+          value={formData.ingredients}
+          onChange={handleChange}
+          placeholder=""
+          required
+        ></input>
+      </label>
       <button type="submit">Submit</button>
     </form>
   );
