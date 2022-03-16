@@ -22,3 +22,7 @@ code {
 h1 {
   font-size: 15px;
 }
+
+form {
+  margin: 20px;
+}
