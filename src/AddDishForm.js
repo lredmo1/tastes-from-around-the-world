@@ -20,7 +20,7 @@ function AddDishForm({setDishes}) {
     })
       .then((resp) => resp.json())
       .then((data) => {
-        setDishes((current) => [data, ...current]);
+        setDishes((current) => [...current, data]);
         setFormData({
           name: "",
         });

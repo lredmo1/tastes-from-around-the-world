@@ -11,12 +11,13 @@ function Home() {
       .then((data) => setDishes(data));
   }, []);
 
-  function handleDeleteItem(deletedDish) {
-    const updatedDishes = dishes.filter((dish) => dish.id !== deletedDish.id);
-    setDishes(updatedDishes);
-}
+//   function handleDeleteItem(deletedDish) {
+//     console.log(deletedDish)
+//     const updatedDishes = dishes.filter((dish) => dish.id !== deletedDish.id);
+//     setDishes(updatedDishes);
+// }
 
-  let dishesCards = dishes.map((dish) => <DishesCard dish={dish} key={dish.id} handleDeleteItem={handleDeleteItem}/>)
+  let dishesCards = dishes.map((dish) => <DishesCard dish={dish} key={dish.id} setDishes={setDishes}/>)
   
   return (
     <>

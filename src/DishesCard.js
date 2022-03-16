@@ -1,11 +1,15 @@
-function DishesCard({ dish, handleDeleteItem }) {
+function DishesCard({ dish, setDishes }) {
+  
+  function handleDeleteItem(deletedDish) {
+    setDishes((currentDishes) => currentDishes.filter((dish) => dish.id !== deletedDish.id));
+  }
 
   function handleDelete() {
     fetch(`http://localhost:5000/dishes/${dish.id}`, {
       method: "DELETE",
     })
       .then((resp) => resp.json())
-      .then((item) => handleDeleteItem(item));
+      .then(handleDeleteItem(dish));
   }
 
   return (
